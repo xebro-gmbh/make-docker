@@ -44,7 +44,6 @@ docker.pull: ## Update all docker container
 	@${DOCKER_COMPOSE} ${DOCKER_FILES} pull
 
 docker.cmd:
-	echo $$CMD
 	${DOCKER_COMPOSE} $$CMD
 
 docker.network:
