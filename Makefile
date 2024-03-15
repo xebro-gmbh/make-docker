@@ -66,3 +66,4 @@ docker.help:
 help: docker.help
 start: docker.up
 stop: docker.stop
+build: docker.network
