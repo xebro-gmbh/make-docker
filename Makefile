@@ -37,7 +37,7 @@ docker.clean: ## Remove all docker Container and clean up System
 	@${DOCKER_COMPOSE} ${DOCKER_FILES} down --remove-orphans
 	@docker images | awk '$$2 == "<none>" {print $$3}' | xargs docker image rm -f
 
-docker.kill:
+docker.kill: ## kill ALL docker container running on your Host
 	@docker stop $$(docker ps -aq) | xargs docker rm
 
 docker.pull: ## Update all docker container
@@ -46,7 +46,7 @@ docker.pull: ## Update all docker container
 docker.cmd:
 	${DOCKER_COMPOSE} $$CMD
 
-docker.network:
+docker.network: ## create docker network
 	@docker network inspect ${XEBRO_PROJECT_NAME} >/dev/null 2>&1 || docker network create ${XEBRO_PROJECT_NAME}
 
 docker.config: ## output the overall config for all included docker-compose.yaml files
