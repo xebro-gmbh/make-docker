@@ -1,5 +1,5 @@
 #--------------------------
-# xebro GmbH - Docker - 0.0.1
+# xebro GmbH - Docker - 0.0.2
 #--------------------------
 
 .PHONY: docker.build.dev docker.build.prod docker.init
